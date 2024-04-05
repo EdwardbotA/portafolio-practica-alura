@@ -6,11 +6,12 @@
 
 body {
   box-sizing: border-box;
+  font-size: 62.5%;
   background-color: var(--cor-de-fundo);
   font-family: "Raleway";
+  line-height: 1;
   margin: 0;
   padding: 0;
-  line-height: 1;
 }
 
 ol,
@@ -22,10 +23,6 @@ li {
 a {
   text-decoration: none;
   color: var(--cor-de-link);
-}
-
-img {
-  width: 30px;
 }
 
 /*Sección Menu*/
@@ -41,6 +38,7 @@ section.menu {
   display: flex;
   align-items: center;
   gap: 8px;
+  font-size: 1.6rem;
 }
 
 .menu__list {
@@ -49,6 +47,50 @@ section.menu {
 
 /*Sección Title*/
 section.title {
+  width: 100%;
+  padding: 16px;
+}
+
+.title__div {
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+  flex-flow: column wrap;
+  gap: 16px;
+}
+
+.title__profile {
+  height: 98px;
+  aspect-ratio: 1 / 1;
+}
+
+.title__bio {
+  text-wrap: pretty;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.title__subsection {
+  text-wrap: pretty;
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.title__network {
+  height: 16px;
+  display: flex;
+  font-weight: bold;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+}
+
+.title__network__item {
+  font-size: 1.4rem;
+}
+
+.title__network__item img {
+  height: 100%;
 }
 
 /*Sección About*/
@@ -83,6 +125,26 @@ section.footer {
   }
   
   /*title*/
+  .title__div {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .title__profile {
+    height: 146px;
+    position: relative;
+    right: 0;
+    top: 0;
+  }
+  
+  .title__container {
+    width: 80%;
+  }
+  
+  .title__network {
+    gap: 32px;
+  }
   
   /*Skills*/
   
@@ -96,27 +158,41 @@ section.footer {
 /*Mobile*/
 @media (min-width: 1425px) {
   /*Menu*/
-  section.menu {
-    width: 80%;
+  section.menu, section.title {
+    width: 85%;
     margin: 0 auto;
-    padding: 32px;
   }
-
+  
   .menu__list {
     display: flex;
     flex-grow: 2;
     gap: 32px;
   }
-
+  
   .menu__list .menu__list__item:last-child {
     font-weight: bold;
   }
-
+  
   .menu__list__item__contato {
     display: none;
   }
-
+  
   /*Titulo*/
+  .title__profile {
+    height: 368px;
+  }
+  
+  .title__container {
+    width: 65%;
+  }
+
+  .title__bio {
+    font-size: 3.2rem;
+  }
+
+  .title__subsection {
+    font-size: 2.2rem;
+  }
 
   /*Sección sobre mi*/
 
