@@ -2,7 +2,8 @@
   /* Inserta la variable de los otros colores inspeccionando el exemplo de figma */
   --cor-de-fundo: #f5f5f5;
   --cor-de-link: #000;
-  --cor-de-about: #EAF2FD
+  --cor-de-about: #EAF2FD;
+  --cor-de-btn: #2A7AE4;
 }
 
 body {
@@ -192,7 +193,6 @@ section.academic {
 
 .academic__courses__box {
   width: 90%;
-  flex-grow: 1;
 }
 
 .academic__courses__list li:first-child {
@@ -220,6 +220,59 @@ section.academic {
 
 /* experiencia*/
 section.experience {
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.experience__section__title {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.experiencie__box {
+  width: 90%;
+  margin-bottom: 64px;
+}
+
+.experience__img {
+  width: 100%;
+}
+
+.experience__title {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.experience__text {
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+.experience__description {
+  display: flex;
+  gap: 16px;
+}
+
+.boton {
+  height: 40px;
+  font-weight: 600;
+  padding: 12px 16px;
+}
+
+.experiencia__botao--repo {
+  background-color: var(--cor-de-fundo);
+  border: 2px solid var(--cor-de-btn);
+  color: var(--cor-de-btn);
+}
+
+.experience__botao--demo {
+  background-color: var(--cor-de-btn);
+  border: 2px solid transparent;
+  color: var(--cor-de-fundo);
 }
 
 /*Contacto*/
@@ -267,14 +320,18 @@ section.footer {
   /*Formación Académica*/
   .academic__courses__box {
     width: 30%;
+    flex-grow: 1;
   }
   /*Experiencia Profesional*/
+  .experiencie__box {
+    width: 100%;
+  }
 }
 
 /*Mobile*/
 @media (min-width: 1425px) {
   /*Menu*/
-  section.menu, section.title, section.skills, section.hobbies {
+  section.menu, section.title, section.skills, section.hobbies, section.experience {
     width: 85%;
     margin: 0 auto;
   }
@@ -336,6 +393,19 @@ section.footer {
   }
 
   /*Experiencia Profesional*/
+  .experiencie__box {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .experiencie__box:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+
+  .experience__img {
+    width: 70%;
+  }
 
   /*Contacto*/
 
