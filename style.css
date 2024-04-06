@@ -19,6 +19,8 @@ ol,
 ul,
 li {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 a {
@@ -116,6 +118,54 @@ section.about {
   height: auto;
 }
 
+/*Section Skills*/
+section.skills {
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.skills__title {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.skills__line {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 32px 16px;
+}
+
+.skills__box {
+  display: flex;
+  width: 40%;
+  flex-grow: 1;
+  align-items: flex-end;
+  background-color: white;
+  height: 118px;
+  padding: 16px;
+}
+
+.skills__img {
+  height: 37px;
+  width: min-content;
+}
+
+.skills__img img {
+  height: 100%;
+}
+
+.skills__name {
+  margin-top: 8px;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
 /*Sección Hobbies*/
 section.hobbies {
 }
@@ -166,6 +216,9 @@ section.footer {
   }
   
   /*Skills*/
+  .skills__box {
+    width: 25%;
+  }
   
   /*Hobbies*/
   
@@ -177,7 +230,7 @@ section.footer {
 /*Mobile*/
 @media (min-width: 1425px) {
   /*Menu*/
-  section.menu, section.title {
+  section.menu, section.title, section.skills {
     width: 85%;
     margin: 0 auto;
   }
@@ -224,6 +277,10 @@ section.footer {
   }
 
   /*Skills*/
+  .skills__box {
+    width: 10%;
+    height: 174px;
+  }
 
   /*Hobbies*/
 
