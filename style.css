@@ -6,14 +6,17 @@
   --cor-de-btn: #2A7AE4;
 }
 
-body {
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+
+body {
   font-size: 62.5%;
   background-color: var(--cor-de-fundo);
   font-family: "Raleway";
   line-height: 1;
-  margin: 0;
-  padding: 0;
 }
 
 ol,
@@ -398,6 +401,11 @@ section.formcontato {
 
 /*footeer*/
 section.footer {
+  display: flex;
+  justify-content: center;
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 32px;
 }
 
 /*Tablet*/
@@ -535,6 +543,4 @@ section.footer {
     height: 100%;
     width: 464px;
   }
-
-  /*Footer*/
 }
