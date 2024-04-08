@@ -438,6 +438,12 @@ section.footer {
   padding: 32px;
 }
 
+.error {
+  margin-top: 2px;
+  font-size: .8rem;
+  color: red;
+}
+
 /*Tablet*/
 @media (min-width: 768px) {
   /* Menú */
