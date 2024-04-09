@@ -117,6 +117,14 @@ boton.addEventListener("click", (e) => {
   e.preventDefault()
   checkInputs()
 
+  if (boton.nextSibling.nodeName === "P") {
+    let result = document.querySelector('.result')
+    result.remove()
+  }
 
-  alert('informacion enviada')
+  let result = document.createElement('p')
+  result.classList.add('result')
+  result.textContent = 'informacion enviada ✓'
+
+  boton.insertAdjacentElement('afterend', result)
 });
