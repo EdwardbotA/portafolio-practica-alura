@@ -389,6 +389,7 @@ section.formcontato {
 .formcontato__input:focus-visible::placeholder {
   color: var(--cor-de-btn);
   translate: 0 -14.5px;
+  transition: all 200ms linear;
 }
 
 .formcontato__textarea:focus-visible::placeholder {
@@ -427,9 +428,12 @@ section.formcontato {
   color: white;
   background-color: var(--cor-de-btn);
   border: none;
+  cursor: pointer;
+  transition: background-color 300ms ease;
 }
 
 .formcontato__botao:disabled {
+  cursor: auto;
   background-color: #4b4a4a;
 }
 
@@ -520,6 +524,19 @@ section.footer {
     font-size: 1.2rem;
   }
   
+  .menu__list .menu__list__item a{
+    padding: 8px 12px;
+    border-radius: 4px;
+    border-bottom: 2px solid transparent;
+  }
+  
+  .menu__list .menu__list__item a:hover {
+    background-color: var(--cor-de-btn);
+    color: var(--cor-de-fundo);
+    border-bottom: 2px solid black;
+    transition: all 500ms ease-in;
+  }
+  
   .menu__list .menu__list__item:last-child {
     font-weight: bold;
   }
@@ -545,6 +562,16 @@ section.footer {
     font-size: 2.2rem;
   }
 
+  .title__network__item a {
+    padding: 4px 8px;
+  }
+
+  .title__network__item a:hover {
+    background-color: var(--cor-de-btn);
+    color: var(--cor-de-fundo);
+    transition: all 500ms ease-in-out;
+  }
+
   /*Sección About*/
   section.about, section.academic, section.formcontato {
     padding: 60px 8%;
@@ -561,7 +588,17 @@ section.footer {
     height: 174px;
   }
 
+  .skills__box:hover, .hobbies__box:hover {
+    transform: scale(1.1);
+    transition: transform 400ms ease-in-out;
+  }
+
   /*Formación Académica*/
+  .academic__courses__list:hover {
+    transform: scale(0.9);
+    transition: transform 400ms ease-in-out;
+  }
+
   .academic__courses__list li:first-child {
     height: 286px;
   }
@@ -581,6 +618,16 @@ section.footer {
     flex-direction: row-reverse;
   }
 
+  .boton {
+    cursor: pointer;
+  }
+  
+  .boton:active {
+    transform: scale(0.9);
+    opacity: 0.8;
+    transition: all 100ms linear;
+  }
+
   .experience__img {
     width: 70%;
   }
@@ -590,5 +637,10 @@ section.footer {
     display: block;
     height: 100%;
     width: 464px;
+  }
+
+  .formcontato__botao:enabled:active {
+    transform: scale(0.9);
+    transition: all 200ms ease-in;
   }
 }
