@@ -8,11 +8,11 @@
 ### ¡Bienvenido al proyecto del Portafolio ! Pasos principales:
 ---
 
-#### pagina desplegada [aqui]()
+#### pagina desplegada [aqui](https://edwardbota.github.io/portafolio-practica-alura/ "click aqui")
 
 ### Analisando el repositorio!
 ---
 ### Este repositorio tiene distintas ramas en donde cada una muetra los cambios que hice deacuerdo a la seccion
 ### Tambien muestra la forma como arreglar errores de overflow Horizontal, animaciones y creacion de codigo JavaScript para la verificacionde formularios
-
+---
 ##### Hecho con amor por Edward Botello haciendo uso de los templates de [Alura Latam](https://github.com/alura-challenges/challenge-one-portafolio-latam "repositorio base")
