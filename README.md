@@ -5,19 +5,14 @@
 </p>
 
 
-### ¡Bienvenido al proyecto base del Portafolio ! Pasos principales:
+### ¡Bienvenido al proyecto del Portafolio ! Pasos principales:
 ---
-#### Marca este proyecto con una estrella ⭐
-#### Sigue las lecciones y las instrucciones de contenido 📚
+
+#### pagina desplegada [aqui]()
 
 ### Analisando el repositorio!
 ---
-### Este es el repositorio base de nuestro proyecto, acá tendrás:
-#### 🔹index.html: Documento HTML concluído que puedes utilizar en tu proyecto. Las fuentes, los archivos CSS y Javascript ya están referenciados en el documento y todas las secciones contienen comentários que te ayudan a entender la estructura. Si quieres, puedes aventurarte y contruir tu propio HTML.
-#### 🔹style.css: Documento de CSS con instrucciones de estilo y algunas sugerencias de desarrollo.
-#### 🔹validacion.js: Documento vacío dónde vas a desarrollar tu lógica de programación para validar formularios usando Javascript.
+### Este repositorio tiene distintas ramas en donde cada una muetra los cambios que hice deacuerdo a la seccion
+### Tambien muestra la forma como arreglar errores de overflow Horizontal, animaciones y creacion de codigo JavaScript para la verificacionde formularios
 
-#### Cuando clones o descargues el proyecto base, tendrás la siguiente presentación:
-<p align="center" >
-     <img width="600" heigth="600" src="https://user-images.githubusercontent.com/101413385/169064699-f268715c-822c-4335-b066-97a1bc1ea8e1.png">
-</p>
+##### Hecho con amor por Edward Botello haciendo uso de los templates de [Alura Latam](https://github.com/alura-challenges/challenge-one-portafolio-latam "repositorio base")
