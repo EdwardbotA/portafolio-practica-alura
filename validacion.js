@@ -1,47 +1,122 @@
-const inputName = document.querySelector('#nombre')
-const labelName = document.querySelector('label[for="nombre"]')
+const boton = document.querySelector("#btn");
 
-function isEmpty(element) {
-  if (!element.value) {
-    const error = document.createElement('p')
-    error.classList.add('error')
-    error.textContent = 'agrege su nombre'
-    labelName.insertAdjacentElement('afterend', error)
-    return true
-  }
+const inputName = document.querySelector("#nombre");
+const inputEmail = document.querySelector("#email");
+const inputAsunto = document.querySelector("#asunto");
+const inputMensaje = document.querySelector("#mensaje");
 
-  return false
+const errorMessages = {
+  nombre: {
+    message: "agregue su nombre"
+  },
+  email: {
+    message: "email no es valido"
+  },
+  asunto: {
+    message:"agregue un asunto"
+  },
+  mensaje: {
+    message:"agregue un mensaje"
+  },
+  error: {
+    message:"longitud maxima"
+  },
+};
+
+function createElement() {
+  const element = document.createElement("p");
+  element.classList.add("error");
+  return element
 }
 
-inputName.addEventListener('input', () => {
-  if (parseInt(inputName.attributes.maxlength.value) === inputName.value.length) {
-    const error = document.createElement('p')
-    error.classList.add('error')
-    error.textContent = 'longitud maxima'
-    
-    labelName.style.color = 'red'
-    inputName.style.borderBottom = '2px solid red'
-    labelName.insertAdjacentElement('afterend', error)
+function handleInput(input, message, condition) {
+  // Si el input está vacío o si se cumple la condición
+  if (!input.value) {
+    let error = input.labels[0].nextSibling;
+    if (error) error.remove();
+    const errorElement = createElement();
+    errorElement.textContent = errorMessages[input.name]?.message;
+    input.labels[0].insertAdjacentElement("afterend", errorElement);
+    addStyles(input, true);
+    return true;
+  } else if (condition) {
+    let error = input.labels[0].nextSibling;
+    if (error) error.remove();
+    const errorElement = createElement();
+    errorElement.textContent = message;
+    input.labels[0].insertAdjacentElement("afterend", errorElement);
+    addStyles(input, true);
   } else {
-    const error = document.querySelector('.error')
-    if (error) {
-      error.remove()
-      labelName.style.color = 'var(--cor-de-btn)'
-      inputName.style.borderBottom = '2px solid var(--cor-de-btn)'
-      inputName.addEventListener('focus', function() {
-        // Cuando el input tiene focus, agrega los estilos deseados
-        labelName.style.color = 'var(--cor-de-btn)'
-        inputName.style.borderBottom = '2px solid var(--cor-de-btn)'
-      });
-      
-      // Agrega otro event listener para el evento 'blur'
-      inputName.addEventListener('blur', function() {
-        // Cuando el input pierde el focus, remueve los estilos
-        labelName.style.color = '#4b4a4ad9'
-        inputName.style.borderBottom = '2px solid #4b4a4ad9'
-      });
-    }
+    let error = input.labels[0].nextSibling;
+    if (error) error.remove();
+    addStyles(input, false);
+    return false;
   }
-})
+}
 
-let vacio = isEmpty(inputName)
+function addStyles(element, status) {
+  if (status) {
+    element.labels[0].style.color = "red";
+    element.style.borderBottom = "2px solid red";
+  } else {
+    element.labels[0].style.color = "var(--cor-de-btn)";
+    element.style.borderBottom = "2px solid var(--cor-de-btn)";
+
+    element.addEventListener("focus", function () {
+      // Cuando el input tiene focus, agrega los estilos deseados
+      element.labels[0].style.color = "var(--cor-de-btn)";
+      element.style.borderBottom = "2px solid var(--cor-de-btn)";
+    });
+
+    element.addEventListener("blur", function () {
+      // Cuando el input pierde el focus, remueve los estilos
+      element.labels[0].style.color = "#4b4a4ad9";
+      element.style.borderBottom = "2px solid #4b4a4ad9";
+    });
+  }
+}
+
+inputName.addEventListener("input", () => {
+  const condition = parseInt(inputName.attributes.maxlength.value) === inputName.value.length;
+  handleInput(inputName, errorMessages.error.message, condition);
+});
+
+inputEmail.addEventListener('input', () => {
+  const regex = /([\w-]\.)+[\w-]{2,4}$/g
+  const condition = !(inputEmail.value.includes('@') && inputEmail.value.match(regex));
+  handleInput(inputEmail, errorMessages.email.message, condition);
+});
+
+inputAsunto.addEventListener("input", () => {
+  const condition = parseInt(inputAsunto.attributes.maxlength.value) === inputAsunto.value.length;
+  handleInput(inputAsunto, errorMessages.error.message, condition);
+});
+
+inputMensaje.addEventListener("input", () => {
+  const condition = parseInt(inputMensaje.attributes.maxlength.value) === inputMensaje.value.length;
+  handleInput(inputMensaje, errorMessages.error.message, condition);
+});
+
+function checkInputs() {
+  const inputs = [inputName, inputEmail, inputAsunto, inputMensaje]
+  const areFull = inputs.every(input => input.value)
+  const areValid = inputs.find(input => input.parentElement.children[2])
+  if (areFull && !areValid) {
+    boton.removeAttribute('disabled');
+  } else {
+    boton.setAttribute('disabled', true);
+  }
+}
+
+inputName.addEventListener('input', checkInputs)
+inputEmail.addEventListener('input', checkInputs)
+inputAsunto.addEventListener('input', checkInputs)
+inputMensaje.addEventListener('input', checkInputs)
+
+boton.addEventListener("click", (e) => {
+  e.preventDefault()
+  checkInputs()
+
+
+  alert('informacion enviada')
+});

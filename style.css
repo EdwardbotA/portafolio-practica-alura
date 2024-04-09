@@ -429,6 +429,10 @@ section.formcontato {
   border: none;
 }
 
+.formcontato__botao:disabled {
+  background-color: #4b4a4a;
+}
+
 /*footeer*/
 section.footer {
   display: flex;
@@ -442,6 +446,12 @@ section.footer {
   margin-top: 2px;
   font-size: .8rem;
   color: red;
+}
+
+.result {
+  font-size: 1rem;
+  font-weight: bold;
+  color: green;
 }
 
 /*Tablet*/

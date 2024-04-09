@@ -427,6 +427,7 @@
                   type="text"
                   name="asunto"
                   id="asunto"
+                  maxlength="50"
                   placeholder="Asunto"
                 />
                 <label for="asunto" class="formcontato__label">Asunto</label>
@@ -439,12 +440,13 @@
                   cols="40"
                   id="mensaje"
                   name="mensaje"
+                  maxlength="300"
                   placeholder="Mensaje"
                 ></textarea>
                 <label for="mensaje" class="formcontato__label">Mensaje</label>
               </div>
 
-              <button type="submit" class="formcontato__botao">
+              <button id="btn" type="submit" class="formcontato__botao" disabled>
                 Enviar mensaje
               </button>
             </form>
